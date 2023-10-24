@@ -11,6 +11,6 @@ class Aula extends Model
     protected $fillable = [
         'idcurso',
         'tituloaula',
-        'urlaula',
+        'urlaula'
     ];
 }

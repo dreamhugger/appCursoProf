@@ -8,8 +8,7 @@ use App\Models\Categoria;
 
 class CategoriaController extends Controller
 {
-    //abri o formulario de cadastro
-    public function mostrarFormCat(){
+    public function mostrarFormCategoria(){
         return view('cad_categoria');
     }
 
@@ -23,14 +22,12 @@ class CategoriaController extends Controller
         return view('index');
     }
 
-    public function cadastroCat(Request $request){
-        //verifica se existe algo na variável nomecategoria
-       $registrosCat = $request->validate([
+    public function cadastroCategoria(Request $request){
+       $registrosCategoria = $request->validate([
         'nomecategoria' => 'string|required'
        ]);
        
-       // Esta linha é que grava o registro no banco.
-       Categoria::create($registrosCat);
+       Categoria::create($registrosCategoria);
 
        return Redirect::route('index');
 
