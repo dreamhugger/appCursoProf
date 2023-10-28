@@ -34,4 +34,10 @@ class AUlaController extends Controller
        return Redirect::route('index');
 
     }
+
+    public function deletarAula(Aula $registrosAula){
+        $registrosAula->delete();
+        
+        return Redirect::route('index');
+    }
 }

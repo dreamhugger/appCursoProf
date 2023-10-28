@@ -65,7 +65,7 @@
                           </td>
 
                           <td>
-                            <form method="Post" Action="{{route('alterar-categoria',$registrosCategorias->id)}}">
+                            <form method="Post" Action="{{route('deletar-categoria',$registrosCategorias->id)}}">
                               @method('delete')
                               @csrf
 

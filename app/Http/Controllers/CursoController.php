@@ -15,7 +15,7 @@ class CursoController extends Controller
     public function mostrarManipulaCurso(){
         $registrosCurso = Curso::All();
        
-        return view('manipula_curso',['registroscurso' => $registrosCurso]);
+        return view('manipula_curso',['registrosCurso' => $registrosCurso]);
     }
 
     public function index(){
@@ -34,5 +34,11 @@ class CursoController extends Controller
 
        return Redirect::route('index');
 
+    }
+
+    public function deletarCurso(Curso $registrosCurso){
+        $registrosCurso->delete();
+        
+        return Redirect::route('index');
     }
 }
