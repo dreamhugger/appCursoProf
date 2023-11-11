@@ -14,7 +14,7 @@ Route::post('/cadcategoria',[CategoriaController::class,'cadastroCategoria'])->n
 //rotas para manipular categoria
 Route::get('/manipulacategoria',[CategoriaController::class,'mostrarManipulaCategoria'])->name("manipula-categoria");
 
-Route::get('/manipulacategoria',[CategoriaController::class,'buscarCategoriaNome'])->name("buscar-categoria-nome");
+Route::get('/buscarcategorianome',[CategoriaController::class,'buscarCategoriaNome'])->name("buscar-categoria-nome");
 
 //rotas para alterar categoria
 Route::get('/alterarcategoria/{registrosCategoria}',[CategoriaController::class,'mostrarAlterarCategoria'])->name("alterar-categoria");
