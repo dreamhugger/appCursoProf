@@ -29,6 +29,8 @@ Route::post('/cadcurso',[CursoController::class,'cadastroCurso'])->name("cadastr
 
 Route::get('/manipulacurso',[CursoController::class,'mostrarManipulaCurso'])->name("manipula-curso");
 
+Route::get('/buscarcursonome',[CursoController::class,'buscarCursoNome'])->name("buscar-curso-nome");
+
 Route::get('/alterarcurso/{registrosCurso}',[CursoController::class,'mostrarAlterarCurso'])->name("alterar-curso");
 Route::put('alterarbancocurso/{registrosCurso}',[CursoController::class,'alterarBancoCurso'])->name("alterar-banco-curso");
 
@@ -39,6 +41,8 @@ Route::get('/cadaula',[AulaController::class,'mostrarFormAula'])->name("form-cad
 Route::post('/cadaula',[AulaController::class,'cadastroAula'])->name("cadastro-aula");
 
 Route::get('/manipulaaula',[AulaController::class,'mostrarManipulaAula'])->name("manipula-aula");
+
+Route::get('/buscaraulatitulo',[AulaController::class,'buscarAulaTitulo'])->name("buscar-aula-titulo");
 
 Route::get('/alteraraula/{registrosAula}',[AulaController::class,'mostrarAlterarAula'])->name("alterar-aula");
 Route::put('alterarbancoaula/{registrosAula}',[AulaController::class,'alterarBancoAula'])->name("alterar-banco-aula");

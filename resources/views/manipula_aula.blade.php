@@ -17,12 +17,12 @@
             <div class="col-10 ">
               <div class="invoice-card card-style mb-30">
                 <div class="card-style mb-30 ">
-                  <h6 class="mb-25 fs-4">Digite o nome da aula do curso</h6>
+                  <h6 class="mb-25 fs-4">Digite o titulo da aula do curso</h6>
 
                   <section class="container m-5">
 
                     <div class="container m-5">
-                      <form method="get" action="/editar-aula">
+                      <form method="get" action="{{route('buscar-aula-titulo')}}">
                         <div class="row">
 
                           <div class="col-6">

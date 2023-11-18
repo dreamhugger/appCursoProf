@@ -40,4 +40,31 @@ class AUlaController extends Controller
         
         return Redirect::route('index');
     }
+    
+    public function buscarAulaTitulo(Request $request){
+    $registrosAula = Aula::query();
+        $registrosAula->when($request->aula,function($query, $valor){
+            $query->where('tituloaula','like','%',$valor,'%');
+        });
+        $registrosAula = $registrosAula->get();
+        return view('manipula_aula',['registrosAula' => $registrosAula]);
+    }
+
+    public function mostrarAlterarAula(Aula $registrosAula){
+        return view('alterar_aula',['registrosAula' => $registrosAula]);
+    }
+
+    public function alterarBancoAula(Aula $registrosAula, Request $request){
+        $registrosRequest = $request->validate([
+            'idcurso' => 'numeric|required',
+            'tituloaula' => 'string|required',
+            'urlaula' => 'string|required'
+        ]);
+
+        $registrosAula->fill($registrosRequest);
+        $registrosAula->save();
+
+        //alert("Dados alterados com sucesso");
+        return Redirect::route('index');
+    }
 }

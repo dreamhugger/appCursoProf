@@ -22,7 +22,7 @@
                   <section class="container m-5">
 
                     <div class="container m-5">
-                      <form method="get" action="/editar-curso">
+                      <form method="get" action="{{route('buscar-curso-nome')}}">
                         <div class="row">
 
                           <div class="col-6">
